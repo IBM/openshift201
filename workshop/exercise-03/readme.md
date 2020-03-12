@@ -23,7 +23,7 @@ To configure your Kubernetes cluster to send logs to your IBM Log Analysis with 
 
 1. Select the **OpenShift** tab and run the 5 steps command:
 
-    ![](../assets/logdna-install.png)
+    ![LogDNA install](../assets/logdna-install.png)
 
     The LogDNA agent collects logs with the extension `*.log` and extensionsless files that are stored in the `/var/log` directory of your pod. By default, logs are collected from all namespaces, including `kube-system`, and automatically forwarded to the IBM Log Analysis with LogDNA service.
 

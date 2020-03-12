@@ -21,7 +21,7 @@ To integrate your monitoring instance with your OpenShift cluster, you must run 
 
 1. Select the **OpenShift** tab and run the curl command next to **Public Endpoint**
 
-    ![](../assets/sysdig-install.png)
+    ![Sysdig Install](../assets/sysdig-install.png)
 
     The Sysdig agent collects metrics such as the worker node CPU usage, worker node memory usage, HTTP traffic to and from your containers, and data about several infrastructure components.
 

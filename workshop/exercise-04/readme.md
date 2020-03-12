@@ -14,7 +14,7 @@ You launch the web UI within the context of an IBM Log Analysis with LogDNA inst
 
 1. Click **View LogDNA**.
 
-   ![](../assets/logdna-launch-ui.png)
+   ![View LogDNA](../assets/logdna-launch-ui.png)
 
 The Web UI opens.
 
@@ -30,7 +30,7 @@ When you launch the LogDNA web UI, log entries are displayed with a predefined f
 1. In the LogDNA web UI, click the **Views** icon ![](../assets/views.png).
 2. Select **Everything** to see all the events.
 
-![](../assets/views-img-1.png)
+![View 1](../assets/views-img-1.png)
 
 ## Customize your default view
 
@@ -43,7 +43,7 @@ In the **USER PREFERENCES** section, you can modify the order of the data fields
 
     For example, add **%app** after the timestamp.
 
-    ![](../assets/views-img-19.png)
+    ![%app](../assets/views-img-19.png)
 
 
 ## Create a custom view to monitor logs
@@ -54,11 +54,11 @@ You can select the events that are displayed through a view by applying a search
 
    From the Openshift console, go to the developer view. Select the project where you have deployed the sample app, and get the pod name. For example: `patient-ui-8658f89574-rgjw8`
 
-   ![](../assets/views-img1.png)
+   ![View](../assets/views-img1.png)
 
 2. Enter in the search bar the following query: `host:{podName}` where {podName} is the name of your pod. For example: `host:patient-ui-8658f89574-rgjw8`
 
-   ![](../assets/views-img2.png)
+   ![View](../assets/views-img2.png)
 
    Click enter.
 
@@ -66,13 +66,13 @@ You can select the events that are displayed through a view by applying a search
 
    Add in the search bar the following query: `level:debug` and click enter. The view will show lines that meet the filter and search criteria. For example: `host:patient-ui-8658f89574-rgjw8 level:debug`
 
-   ![](../assets/views-img3.png)
+   ![View](../assets/views-img3.png)
 
 4. Save the custom view.
 
    Click **Unsaved view**. Select **Save view**.
 
-   ![](../assets/views-img-6.png)
+   ![View](../assets/views-img-6.png)
 
    Enter the name of the view. Use the following format: `<Enter your user name> patientUI`. For example, `marisa patientui`
 
@@ -82,7 +82,7 @@ You can select the events that are displayed through a view by applying a search
 
 A new category appears on the left navigation panel.
 
-![](../assets/views-img-11.png)
+![View](../assets/views-img-11.png)
 
 ### Generate application log data
 
@@ -91,11 +91,11 @@ Generate logs:
 1. Run `oc status`.
 2. Get the application URL.
 
-    ![](../assets/views-img-20.png)
+    ![View](../assets/views-img-20.png)
 
 3. Launch the application from a browser. Enter in the browser the application URL. Then, log in and log out with different names to see login entries for each user.
 
-    ![](../assets/views-img-21.png)
+    ![View](../assets/views-img-21.png)
 
 ## Analyze a log line
 
@@ -112,11 +112,11 @@ Complete the following steps:
 
 5. Click **View in Context** to see the log line in context of other log lines from that host, app, or both. This is a very useful feature when you want to troubleshoot a problem.
 
-   ![](../assets/views-img-12.png)
+   ![View](../assets/views-img-12.png)
 
    A new pop up window opens.
 
-   ![](../assets/views-img-13.png)
+   ![View](../assets/views-img-13.png)
 
    Choose one of the following options:
 
@@ -136,7 +136,7 @@ Complete the following steps:
 
     For example, the log record in the UI looks like:
 
-    ![](../assets/views-img-16.png)
+    ![View](../assets/views-img-16.png)
 
     When you copy the record, you get:
 
@@ -166,11 +166,11 @@ Complete the following steps to jump to a specific time:
 
     Enter an absolute time to jump to a point in time in your events such as `January 27 10:00am`.
 
-    ![](../assets/views-img-15.png)
+    ![View](../assets/views-img-15.png)
 
     Enter a relative time such as `5 days ago`.
 
-    ![](../assets/views-img-17.png)
+    ![View](../assets/views-img-17.png)
 
     You can also enter a time range such as `yesterday 10am to yesterday 11am`, `last fri 4:30pm to 11/12 1 AM`, `last wed 4:30pm to 23/05 1 AM`, or `May 20 10am to May 22 10am`. Make sure to include `to` to separate the initial timestamp from the end timestamp.
 
@@ -191,27 +191,27 @@ Complete the following steps to create a dashboard to monitor logs from the lab'
 3. Click **Add graph**.
 4. Select the field **host**, then select the value that matches your pod name.
 
-   ![](../assets/board-img-4.png)
+   ![LogDNA Board](../assets/board-img-4.png)
 
    Click **Add graph**.
 
-   ![](../assets/board-img-5.png)
+   ![LogDNA Board](../assets/board-img-5.png)
 
 5. Open a view that displays the logs for the patientui app. Click the graph in a peak of data at the time that you want to see logs, and then click **Show logs**.
 
-   ![](../assets/board-img-6.png)
+   ![LogDNA Board](../assets/board-img-6.png)
 
    A new page opens with the relevant log entries.
 
 6. Add subplots to analyze the data by applying additonal filtering criteria.
 
-   ![](../assets/board-img-8.png)
+   ![LogDNA Board](../assets/board-img-8.png)
 
    Click **Show subplots**.
 
    Select **Histogram** and **level**.
 
-   ![](../assets/board-img-11.png)
+   ![LogDNA Board](../assets/board-img-11.png)
 
 7. Name the dashboard by hitting "Edit".
 
@@ -241,7 +241,7 @@ Complete the following steps to create a dashboard to monitor logs from the lab'
 
    The widget should look similar to the following one:
 
-   ![](../assets/screen-img-7.png)
+   ![Widget](../assets/screen-img-7.png)
 
 4. Add a gauge.
 
@@ -253,35 +253,35 @@ Complete the following steps to create a dashboard to monitor logs from the lab'
 
    To configure the _Gauge_ widget to report on the debug log lines for the application patientui, you must select the field **level**, and set the value to **debug**. Then, set the advanced condition `app:patientui`. The duration is set to the default, last 1 day.
 
-   ![](../assets/screen-img-9.png)
+   ![Gauge](../assets/screen-img-9.png)
 
    Add a label, by entering a value for the _label_ field. Enter `PatientUI - INFO`. Also add the gauge limits `0` for Minimum and `5000` for maximum.
 
    The widget should look similar to the following one:
 
-   ![](../assets/screen-img-11.png)
+   ![Widget](../assets/screen-img-11.png)
 
 5. Add a table.
 
    Click **Add Widget**.
 
-   ![](../assets/screen-img-2.png)
+   ![Widget](../assets/screen-img-2.png)
 
    Select **Table**.
 
-   ![](../assets/screen-img-12.png)
+   ![Table](../assets/screen-img-12.png)
 
    Click the widget. You will get the configuration fields for this widget.
 
    To list the number of records in the last 24 hours for the cluster namespaces, set `Group By` to **namespace**.
 
-   ![](../assets/screen-img-13.png)
+   ![Group By](../assets/screen-img-13.png)
 
    Change the default number of rows from 3 to 10.
 
    The widget should look similar to the following one:
 
-   ![](../assets/screen-img-15.png)
+   ![Widget](../assets/screen-img-15.png)
 
 6. Save the screen. Select **Save Screen**.
 
