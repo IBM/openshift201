@@ -18,7 +18,6 @@ You launch the web UI within the context of an IBM Log Analysis with LogDNA inst
 
 The Web UI opens.
 
-
 ## Create a custom view
 
 In LogDNA, you can configure custom views to monitor a subset of data. You can also attach an alert to a view to be notified of the presence or absence of log lines.
@@ -27,7 +26,10 @@ When you launch the LogDNA web UI, log entries are displayed with a predefined f
 
 ## View events with the default format
 
-1. In the LogDNA web UI, click the **Views** icon ![](../assets/views.png).
+1. In the LogDNA web UI, click the **Views** icon
+
+![View](../assets/views.png).
+
 2. Select **Everything** to see all the events.
 
 ![View 1](../assets/views-img-1.png)
@@ -36,7 +38,10 @@ When you launch the LogDNA web UI, log entries are displayed with a predefined f
 
 In the **USER PREFERENCES** section, you can modify the order of the data fields that are displayed per line.
 
-1. Select the **Configuration** icon ![](../assets/admin.png).
+1. Select the **Configuration** icon
+
+![Configuration](../assets/admin.png).
+
 2. Select **USER PREFERENCES**. A new window opens.
 3. Select **Log Format**.
 4. Modify the _Line Format_ section to match your requirements. Drag boxes around. Click **Done**.
@@ -44,7 +49,6 @@ In the **USER PREFERENCES** section, you can modify the order of the data fields
     For example, add **%app** after the timestamp.
 
     ![%app](../assets/views-img-19.png)
-
 
 ## Create a custom view to monitor logs
 
@@ -103,7 +107,10 @@ At any time, you can view each log line in context.
 
 Complete the following steps:
 
-1. Click the **Views** icon ![](../assets/views.png).
+1. Click the **Views** icon
+
+![Views](../assets/views.png).
+
 2. Select **Everything** or a view.
 3. Identify a line in the log that you want to explore.
 4. Expand the log line.
@@ -158,7 +165,9 @@ Complete the following steps to jump to a specific time:
 
 1. Launch the LogDNA web UI.
 
-2. Click the **Views** icon ![](../assets/views.png).
+2. Click the **Views** icon.
+
+![Views](../assets/views.png)
 
 3. Select your custom view.
 
@@ -186,7 +195,10 @@ For example, you can use graphs to analyze patterns and trends over a period of 
 
 Complete the following steps to create a dashboard to monitor logs from the lab's sample app:
 
-1. In the LogDNA web UI, click the **Boards** icon ![Dashboards icon](../assets/boards.png).
+1. In the LogDNA web UI, click the **Boards** icon
+
+![Dashboards icon](../assets/boards.png).
+
 2. Select **NEW BOARD** to create a new dashboard.
 3. Click **Add graph**.
 4. Select the field **host**, then select the value that matches your pod name.
@@ -229,7 +241,10 @@ You can create a screen to monitor your app graphically through metrics \(counte
 
 Complete the following steps to create a dashboard to monitor logs from the lab's sample app:
 
-1. In the LogDNA web UI, click the **screens** icon ![](../assets/screens.png).
+1. In the LogDNA web UI, click the **screens** icon
+
+![Screens](../assets/screens.png)
+
 2. Select **NEW SCREEN**.
 3. Click **Add Widget** and select **Count**.
 

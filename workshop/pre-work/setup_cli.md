@@ -1,6 +1,6 @@
 # Access the cluster using the command line (CLI)
 
-To easily connect to the cluster, you need the OpenShift CLI `oc` that exposes commands for managing your applications, as well as lower level tools to interact with each component of your system. 
+To easily connect to the cluster, you need the OpenShift CLI `oc` that exposes commands for managing your applications, as well as lower level tools to interact with each component of your system.
 
 This topic guides you through getting started with the CLI, including installation and logging in.
 
@@ -12,19 +12,17 @@ It's preconfigured with the full IBM Cloud CLI and tons of plug-ins and tools th
 
 1. In the Console menu bar, click the IBM Cloud Shell icon to start a session
 
-    ![](../assets/cloud-shell-access.png)
+    ![Access](../assets/cloud-shell-access.png)
 
 1. A session starts and automatically logs you in through the IBM Cloud CLI.
 
-    ![](../assets/cloud-shell-login.png)
-
+    ![Login](../assets/cloud-shell-login.png)
 
 ## Connect to the OpenShift cluster
 
 1. In the OpenShift web console, click on the email/ID in the upper right. Choose the _Copy Login Command_ option.
 
     ![Copy the login credentials](../assets/copy-login-command.png)
-
 
 1. In a Shell termimal, paste the login command you copied from the web console.
 
@@ -41,8 +39,8 @@ It's preconfigured with the full IBM Cloud CLI and tons of plug-ins and tools th
 
     You have access to the following projects and can switch between them with 'oc project <projectname>'
     ```
-Your CLI is now connected to your Red Hat OpenShift cluster running in IBM Cloud.
 
+Your CLI is now connected to your Red Hat OpenShift cluster running in IBM Cloud.
 
 ## Validate cluster access using `oc` commands
 
