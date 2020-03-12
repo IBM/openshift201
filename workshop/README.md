@@ -1,6 +1,6 @@
 # Introduction
 
-## OpenShift 101: Learn the Basics of Red Hat OpenShift on IBM Cloud
+## OpenShift 201: Learn the integrations of Red Hat OpenShift on IBM Cloud
 
 A recent study by McKinsey & Company reveals that only 20 percent of enterprise applications have moved to the cloud. We believe that a hybrid cloud approach, built on open source and a vibrant open ecosystem, is the best way to move the remaining 80 percent.
 
@@ -8,9 +8,8 @@ Red Hat OpenShift represents a common platform, based on the industry-standard K
 
 The goals of this workshop are:
 
-* To familiarize the reader with OpenShift
-* Deploy a Node.js application to OpenShift
-* Use OpenShift's features to monitor, scale the application
+* To familiarize the studen with OpenShift on IBM Cloud
+* To learn how to integrate OpenShift and IBM Cloud
 
 ## Architecture
 
@@ -27,21 +26,15 @@ The goals of this workshop are:
 ## Agenda
 
 ### Getting Started
-* [Create account and get cluster](getting-started/get_started.md)
-* [Access the cluster using the command line](getting-started/setup_cli.md)
+* [Create account and get cluster](pre-work/get_started.md)
+* [Access the cluster using the command line](pre-work/setup_cli.md)
 
-### Part 1 - Learning OpenShift
-* [1.1. Deploying an application](part1-learn_openshift/exercise-1.md)
-* [1.2. Logging and monitoring](part1-learn_openshift/exercise-2.md)
-* [1.3. Metrics and dashboards](part1-learn_openshift/exercise-3.md)
-* [1.4. Scaling the application](part1-learn_openshift/exercise-4.md)
-
-### Part 2 - OpenShift and IBM Cloud
-* [2.5. Cloudant DB with IBM Cloud Operator](part2-openshift_ibmcloud/exercise-5.md)
-* [2.6. Configure the Sysdig Agent](part2-openshift_ibmcloud/exercise-6.md)
-* [2.7. Configure the LogDNA Agent](part2-openshift_ibmcloud/exercise-7.md)
-* [2.8. Analyze your logs with LogDNA](part2-openshift_ibmcloud/exercise-8.md)
-* [2.9. Monitor your Cluster with SysDig](part2-openshift_ibmcloud/exercise-9.md)
+### OpenShift and IBM Cloud
+* [Cloudant DB with IBM Cloud Operator](exercise-01/readme.md)
+* [Configure the Sysdig Agent](exercise-02/readme.md)
+* [Configure the LogDNA Agent](exercise-03/readme.md)
+* [Analyze your logs with LogDNA](exercise-04/readme.md)
+* [Monitor your Cluster with SysDig](exercise-05/readme.md)
 
 ## Compatibility
 
@@ -64,4 +57,3 @@ Many folks have contributed to help shape, test, and contribute the workshop.
 * [Alex Parker](https://github.com/ajp-io)
 * [Lionel Mace](https://github.com/lionelmace)
 * [Marisa Lopez de Silanes Ruiz](https://github.com/lopezdsr)
-
