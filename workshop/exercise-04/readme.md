@@ -8,7 +8,7 @@ You can use IBM Log Analysis with LogDNA to manage system and application logs i
 
 ## Launch the LogDNA webUI
 
-You launch the web UI within the context of an IBM Log Analysis with LogDNA instance, from the IBM Cloud UI. 
+You launch the web UI within the context of an IBM Log Analysis with LogDNA instance, from the IBM Cloud UI.
 
 1. Select your instance.
 
@@ -52,7 +52,7 @@ You can select the events that are displayed through a view by applying a search
 
 1. In the LogDNA web UI, filter out the logs for the sample app that you have delpoyed in the cluster in previous steps.
 
-   From the Openshift console, go to the developer view. Select the project where you have deployed the sample app, and get the pod name. For example: `patient-ui-8658f89574-rgjw8` 
+   From the Openshift console, go to the developer view. Select the project where you have deployed the sample app, and get the pod name. For example: `patient-ui-8658f89574-rgjw8`
 
    ![](../assets/views-img1.png)
 
@@ -62,9 +62,9 @@ You can select the events that are displayed through a view by applying a search
 
    Click enter.
 
-3. Filter out log lines to display only lines that are tagged as debug lines. 
+3. Filter out log lines to display only lines that are tagged as debug lines.
 
-   Add in the search bar the following query: `level:debug` and click enter. The view will show lines that meet the filter and search criteria. For example: `host:patient-ui-8658f89574-rgjw8 level:debug` 
+   Add in the search bar the following query: `level:debug` and click enter. The view will show lines that meet the filter and search criteria. For example: `host:patient-ui-8658f89574-rgjw8 level:debug`
 
    ![](../assets/views-img3.png)
 
@@ -132,7 +132,7 @@ Complete the following steps:
 
    > **Tip: Open a view per type of context to troubleshoot problems.**
 
-6. Click **Copy to clipboard** to copy the message field to the clipboard. 
+6. Click **Copy to clipboard** to copy the message field to the clipboard.
 
     For example, the log record in the UI looks like:
 
@@ -140,11 +140,11 @@ Complete the following steps:
 
     When you copy the record, you get:
 
-    ```
-    [36m[2020-01-16T13:22:25.951] [DEBUG] default - [39mcalled the information endpoint for Marisa
+    ```console
+    [2020-01-16T13:22:25.951] [DEBUG] default - called the information endpoint for Marisa
     ```
 
-    Notice that when you copy the log record you get less information than what it is displayed in the view. To get a line with all the fields, you must export data from a custom view. 
+    Notice that when you copy the log record you get less information than what it is displayed in the view. To get a line with all the fields, you must export data from a custom view.
 
 When you are finished, close the line.
 
@@ -154,13 +154,13 @@ In a view, you can search events that are displayed through a view for a specifi
 
 You can apply a timestamp by specifying an absolute time, a relative time, or a time range.
 
-Complete the following steps to jump to a specific time: 
+Complete the following steps to jump to a specific time:
 
-1. Launch the LogDNA web UI. 
+1. Launch the LogDNA web UI.
 
-2. Click the **Views** icon ![](../assets/views.png). 
+2. Click the **Views** icon ![](../assets/views.png).
 
-3. Select your custom view. 
+3. Select your custom view.
 
 4. Enter a time query. Choose any of the following options:
 
@@ -168,7 +168,7 @@ Complete the following steps to jump to a specific time:
 
     ![](../assets/views-img-15.png)
 
-    Enter a relative time such as `5 days ago`. 
+    Enter a relative time such as `5 days ago`.
 
     ![](../assets/views-img-17.png)
 

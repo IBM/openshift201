@@ -66,7 +66,7 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 8. Make sure you're logged in to the cluster in this terminal session. Otherwise you must re-run the command `oc login` with the cluster information:
 
-    [Access your cluster using the oc CLI](../getting-started/setup_cli.md#access-the-openShift-web-console).
+    [Access your cluster using the oc CLI](../prep-work/setup_cli.md#access-the-openShift-web-console).
 
 9. Use the helper script provided by IBM to create a new API token, and register it as a secret in your OpenShift cluster:
 
@@ -107,15 +107,15 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 2. You'll see that there's two APIs available -- a Service and a Binding. A **Service** will allow us to create the actual Cloudant service itself -- do that first by clicking **Create Instance** under **Service**. Copy and replace the following YAML:
 
-	> ```yaml
-	> apiVersion: ibmcloud.ibm.com/v1alpha1
-	> kind: Service
-	> metadata:
-	>   name: cloudant-service
-	> spec:
-	>   plan: lite
-	>   serviceClass: cloudantnosqldb
-	>  ```
+	 ```yaml
+	 apiVersion: ibmcloud.ibm.com/v1alpha1
+	 kind: Service
+	 metadata:
+	   name: cloudant-service
+	 spec:
+	   plan: lite
+	   serviceClass: cloudantnosqldb
+	 ```
 
    ![cloudantservice](../assets/cloudantservice.png)
 
@@ -135,14 +135,14 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 5. Next, create the "binding" resource for your Operator \(instead of Service as you did above\):
 
-	> ```bash
-	> apiVersion: ibmcloud.ibm.com/v1alpha1
-	> kind: Binding
-	> metadata:
-	>   name: cloudant-binding
-	> spec:
-	>   serviceName: cloudant-service
-	> ```
+	```bash
+	apiVersion: ibmcloud.ibm.com/v1alpha1
+	kind: Binding
+	metadata:
+	  name: cloudant-binding
+	spec:
+	  serviceName: cloudant-service
+	```
 
    ![bindingresource](../assets/cloudantbinding.png)
 

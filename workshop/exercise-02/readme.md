@@ -17,7 +17,7 @@ To integrate your monitoring instance with your OpenShift cluster, you must run 
 
 1. On your instance, click **Edit sources**.
 
-1. Before running the curl command in the next step, make sure you're still logged in to the cluster. [Access your cluster using the oc CLI](../getting-started/setup_cli#access-your-cluster-using-the-oc-cli). 
+1. Before running the curl command in the next step, make sure you're still logged in to the cluster. [Access your cluster using the oc CLI](../prep-work/setup_cli#access-your-cluster-using-the-oc-cli).
 
 1. Select the **OpenShift** tab and run the curl command next to **Public Endpoint**
 
@@ -42,5 +42,3 @@ Example output:
     sysdig-agent-qrbcq   1/1       Running   0          1m
     sysdig-agent-rhrgz   1/1       Running   0          1m
 ```
-
-

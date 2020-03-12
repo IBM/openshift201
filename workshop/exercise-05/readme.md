@@ -4,7 +4,6 @@ IBM Cloud Monitoring with Sysdig is a co-branded cloud-native, and container- in
 
 In the next steps, you will learn how to use dashboards and metrics to monitor the health of your application.
 
-
 ## View SysDig pre-defined views and dashboards
 
 Use views and dashboards to monitor your infrastructure, applications, and services. You can use pre-defined dashboards. You can also create custom dashboards through the Web UI or programmatically. You can backup and restore dashboards by using Python scripts.
@@ -45,7 +44,6 @@ The following table lists the different types of pre-defined dashboards:
 
    ![](../assets/sysdig-wizard6.png)
 
-
 ## View the Sysdig dashboard
 
 1. Navigate the Sysdig console to get metrics on your Kubernetes cluster, nodes, deployments, pods, containers.
@@ -61,7 +59,6 @@ The following table lists the different types of pre-defined dashboards:
 4. Under **Dashboard**, select **Default Dashboards** &gt; **Applications**. Then select **HTTP** to get a global view of the cluster HTTP load.
 
 5. Under Dashboard, select **Default Dashboards** &gt; **Hosts & Containers**. Then select **Overview by Host** to understand how nodes are currently performing.
-
 
 ## Explore the normal traffic flow of the application
 
@@ -118,6 +115,5 @@ You can use the **Connection Table** dashboard to monitor how data flows between
 {% hint style='tip' %}
 Find more about IBM Cloud Monitoring with Sysdig in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/index.html#getting-started).
 {% endhint %}
-
 
 Thanks so much for running this full workshop, we hope you've learned something. If you can reach out to the TA or Workshop Presenter and say you've completed with any feedback you may have.
