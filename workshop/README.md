@@ -8,7 +8,7 @@ Red Hat OpenShift represents a common platform, based on the industry-standard K
 
 The goals of this workshop are:
 
-* To familiarize the studen with OpenShift on IBM Cloud
+* To familiarize the student with OpenShift on IBM Cloud
 * To learn how to integrate OpenShift and IBM Cloud
 
 ## Architecture
