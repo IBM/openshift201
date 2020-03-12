@@ -9,9 +9,9 @@
 ### OpenShift and IBM Cloud
 * [Cloudant DB with IBM Cloud Operator](exercise-01/readme.md)
 * [Configure the Sysdig Agent](exercise-02/readme.md)
-* [Configure the LogDNA Agent](exercise-03/readme.md)
-* [Analyze your logs with LogDNA](exercise-04/readme.md)
-* [Monitor your Cluster with SysDig](exercise-05/readme.md)
+* [Monitor your Cluster with SysDig](exercise-03/readme.md)
+* [Configure the LogDNA Agent](exercise-04/readme.md)
+* [Analyze your logs with LogDNA](exercise-05/readme.md)
 
 ## Resources
 * [Docs: Red Hat OpenShift on IBM Cloud](https://cloud.ibm.com/docs/openshift)

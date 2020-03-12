@@ -1,66 +1,124 @@
-# Configure LogDNA agent for OpenShift  cluster
+# Monitor your Cluster with SysDig
 
-The LogDNA agent is responsible for collecting and forwarding logs to your IBM Log Analysis with LogDNA instance. After you provision an instance of IBM Log Analysis with LogDNA, you must configure a LogDNA agent for each log source that you want to monitor.
+IBM Cloud Monitoring with Sysdig is a co-branded cloud-native, and container- intelligence management system that you can include as part of your IBM Cloud architecture.
+Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot performance issues, define alerts, and design custom dashboards.
+IBM Cloud Monitoring with Sysdig is operated by Sysdig in partnership with IBM. [Learn more](https://cloud.ibm.com/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started).
 
-To configure your Kubernetes cluster to send logs to your IBM Log Analysis with LogDNA instance, you must install a *LogDNA-agent* pod on each node of your cluster. The LogDNA agent reads log files from the pod where it is installed, and forwards the log data to your LogDNA instance.
+In the next steps, you will learn how to use dashboards and metrics to monitor the health of your application.
 
-{% hint style='info' %} If you've been invited to a lab account where an instance of LogDNA has already been provisioned and configured, skip the create and deploy steps and go to verify the agent at the bottom. Retrieve your LogDNA instance be looking at the cluster name in the tags attached to the instance. {% endhint %}
+## View SysDig pre-defined views and dashboards
 
-## Create a Sysdig service instance
+Use views and dashboards to monitor your infrastructure, applications, and services. You can use pre-defined dashboards. You can also create custom dashboards through the Web UI or programmatically. You can backup and restore dashboards by using Python scripts.
 
-1. Create an instance of [IBM Cloud Logging with LogDNA](https://cloud.ibm.com/observe/logging/create) from the catalog:
-   1. Set the **Service name** to **YOUR_IBM_ID-logdna**.
-   1. Select the location where your cluster is created. If the location is not in the list, pick the closest region (e.g. us-south).
-   1. Use the default resource group.
-   1. Click **Create**.
-1. In the [**Observability** category, under Logging](https://cloud.ibm.com/observe/logging), locate the service instance you created.
+The following table lists the different types of pre-defined dashboards:
 
-## Deploy the LogDNA agent in the cluster
+| Type | Description |
+| :--- | :--- |
+| Applications | Dashboards that you can use to monitor your applications and infrastructure components. |
+| Host and containers | Dashboards that you can use to monitor resource utilization and system activity on your hosts and in your containers. |
+| Network | Dashboards that you can use to monitor your network connections and activity. |
+| Service | Dashboards that you can use to monitor the performance of your services, even if those services are deployed in orchestrated containers. |
+| Topology | Dashboards that you can use to monitor the logical dependencies of your application tiers and overlay metrics. |
 
-1. On your instance, click **Edit log sources**.
+## Complete the Sysdig installation wizard
 
-1. Before running the curl command in the next step, make sure you're still logged in to the cluster. [Access your cluster using the oc CLI](../prep-work/setup_cli#access-your-cluster-using-the-oc-cli).
+1. Launch the Sysdig web UI.
 
-1. Select the **OpenShift** tab and run the 5 steps command:
+    ![Launch](../assets/icp-monitoring-launch.png)
 
-    ![LogDNA install](../assets/logdna-install.png)
+2. In the Sysdig Welcome wizard, click **Next**
 
-    The LogDNA agent collects logs with the extension `*.log` and extensionsless files that are stored in the `/var/log` directory of your pod. By default, logs are collected from all namespaces, including `kube-system`, and automatically forwarded to the IBM Log Analysis with LogDNA service.
+   ![Wizard](../assets/sysdig-wizard1.png)
 
-## Verify that the LogDNA agent is deployed successfully
+3. Select **Kubernetes | GKE | OpenShift** as the installation method.
 
-To verify that the LogDNA agent is deployed successfully, run the following command:
+   ![Wizard](../assets/sysdig-wizard2.png)
 
-1. Target the project where the LogDNA agent is deployed.
+4. You should see a message `You have X agents connected`. Click **GO TO NEXT STEP**.
 
-    ```bash
-    oc project ibm-observe
-    ```
+   ![Wizard](../assets/sysdig-wizard3.png)
 
-2. Verify that the `logdna-agent` pods on each node are in a **Running** status.
+5. Setup is complete. Click **LET'S GET STARTED**
 
-    ```bash
-    oc get pods -n ibm-observe
-    ```
+   ![Wizard](../assets/sysdig-wizard4.png)
 
-The deployment is successful when you see one or more LogDNA pods.
-* **The number of LogDNA pods equals the number of worker nodes in your cluster.**
-* All pods must be in a `Running` state.
-* *Stdout* and *stderr* are automatically collected and forwarded from all containers. Log data includes application logs and worker logs.
-* By default, the LogDNA agent pod that runs on a worker collects logs from all namespaces on that node.
+6. Select **Next**
 
-After the agent is configured, you should start seeing logs from this cluster in the LogDNA web UI. If after a period of time you cannot see logs, check the agent logs.
+   ![Next](../assets/sysdig-wizard5.png)
 
-To check the logs that are generated by a LogDNA agent, run the following command:
+7. Finally **Complete Onboarding**
 
-```bash
-oc logs logdna-agent-<ID>
-```
+   ![Done](../assets/sysdig-wizard6.png)
 
-Where *ID* is the ID for a LogDNA agent pod.
+## View the Sysdig dashboard
 
-For example,
+1. Navigate the Sysdig console to get metrics on your Kubernetes cluster, nodes, deployments, pods, containers.
 
-```bash
-oc logs logdna-agent-xxxkz
-```
+2. Under the **Explore** section,select **Containerized Apps** to view raw metrics for all workloads running on the cluster.
+
+   ![Select App](../assets/sysdig-select-app.png)
+
+3. Under **Explore**, select **Nodes**, search `patient-ui`. Look for the partientui pod entry.
+
+   ![Explore Node](../assets/sysdig-explore-node.png)
+
+4. Under **Dashboard**, select **Default Dashboards** &gt; **Applications**. Then select **HTTP** to get a global view of the cluster HTTP load.
+
+5. Under Dashboard, select **Default Dashboards** &gt; **Hosts & Containers**. Then select **Overview by Host** to understand how nodes are currently performing.
+
+## Explore the normal traffic flow of the application
+
+You can use the **Connection Table** dashboard to monitor how data flows between your application components.
+
+1. From the **Explore** tab, select **Deployments**.
+2. Select your cluster (e.g. roks081). Then, select the namespace where you deployed your sample app.
+3. Select the _patientui_ pod entry.
+4. Select **Default Dashboards**.
+
+   ![Explore](../assets/explore-img-4.png)
+
+5. Check out the two dashboards under **Hosts & Containers**:
+   * **Overview by Host**
+   * **Overview by Container**.
+
+## Explore the cluster and the node capacity
+
+1. From the **Explore** tab, select **Deployments**.
+2. Select your cluster (e.g. roks081). Then, select the namespace where you deployed your sample app.
+3. Select the _patientui_ pod entry.
+4. Select **Default Dashboards**.
+5. Select **Kubernetes > Kuberentes Cluster and Node Capacity**.
+
+   ![Explore](../assets/explore-img-9.png)
+
+   Check the **Total CPU Capacity**. This is the CPU capacity that has been reserved for the node including system daemons.
+
+   Check the **Total Allocatable CPU**. This is the CPU which is available for pods excluding system daemons.
+
+   Check the **Total Pod CPU limit**. It should be less than the allocatable CPU of the node or cluster.
+
+   Check the **Total Pod CPU Requested**. It is the amount of CPU that will be guaranteed for pods on the node or cluster.
+
+   Check the **Total Pod CPU Usage**. It is the total amount of CPU that is used by all Pods on the node or cluster.
+
+## Explore the Network
+
+1. From the **DASHBOARDS** tab, select **Default Dashboards**. Then, select **Network > Overview**.
+
+   The following dashboard is displayed. It shows information about all resources that are monitored thorugh the instance.
+
+   ![Dashboard](../assets/dashboard-img-2.png)
+
+2. Change the scope of the dashboard to display information about your openshift cluster. Select **Edit scope** on the right side and change it:
+
+    ![Dashboard](../assets/dashboard-img-4.png)
+
+    The dashboard now shows information about the ibm-observe namespace.
+
+    ![Dashboard](../assets/dashboard-img-5.png)
+
+{% hint style='tip' %}
+Find more about IBM Cloud Monitoring with Sysdig in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/index.html#getting-started).
+{% endhint %}
+
+Thanks so much for running this full workshop, we hope you've learned something. If you can reach out to the TA or Workshop Presenter and say you've completed with any feedback you may have.
