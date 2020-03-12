@@ -24,13 +24,13 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 5. Next, you'll need to set your IBM Cloud credentials so that the Operator knows how/where to create your Cloudant service. The operator needs to create the service in your own account, rather than the shared IBM lab account.
 
-   ```sh
+   ```bash
     ibmcloud login --sso
    ```
 
-   Remember: Pick your own account, not IBM.
+   Remember: Pick your own account, **not** IBM.
 
-   ```
+   ```bash
     Select an account:
     1. Sai Vennam's Account (d815248d6ad0cc354df42d43db45ce09) <-> 1909673
     2. IBM (3a4766a7bcab032d4ffc980d360fbf23) <-> 338150
@@ -39,7 +39,7 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 6. Next, set your CF org, space and resource group where the Cloudant service will be created. Resource group is usually named `default` or `Default` -- case-sensitive.
 
-    ```sh
+    ```bash
     ibmcloud target --cf -g Default
     or
     ibmcloud target --cf -g default
@@ -47,18 +47,18 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 7. Verify that all fields are set:
 
-    ```sh
+    ```bash
     ibmcloud target
     ```
 
-    ```
-    API endpoint:      https://cloud.ibm.com   
-    Region:            us-south   
-    User:              svennam@us.ibm.com   
-    Account:           Sai Vennam's Account (d815248d6ad0cc354df42d43db45ce09) <-> 1909673   
-    Resource group:    default   
-    CF API endpoint:   https://api.us-south.cf.cloud.ibm.com (API version: 2.144.0)   
-    Org:               svennam@us.ibm.com   
+    ```bash
+    API endpoint:      https://cloud.ibm.com
+    Region:            us-south
+    User:              svennam@us.ibm.com
+    Account:           Sai Vennam's Account (d815248d6ad0cc354df42d43db45ce09) <-> 1909673
+    Resource group:    default
+    CF API endpoint:   https://api.us-south.cf.cloud.ibm.com (API version: 2.144.0)
+    Org:               svennam@us.ibm.com
     Space:             dev
     ```
 
@@ -70,19 +70,20 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 9. Use the helper script provided by IBM to create a new API token, and register it as a secret in your OpenShift cluster:
 
-    ```sh
+    ```bash
     curl -sL https://raw.githubusercontent.com/IBM/cloud-operators/master/hack/config-operator.sh | bash
     ```
 
 10. Verify that all the fields in `data` are set for the configmap \(`org`, `region`, `resourceGroup` and `space`\) and secret \(`api-key` and `region`\):
 
-    ```sh
+    ```bash
     oc get configmap/seed-defaults -o yaml -n default
     oc get secret/seed-secret -o yaml -n default
     ```
 
     Output:
-    ```
+
+    ```bash
     apiVersion: v1
     data:
         org: svennam@us.ibm.com
@@ -106,7 +107,7 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 2. You'll see that there's two APIs available -- a Service and a Binding. A **Service** will allow us to create the actual Cloudant service itself -- do that first by clicking **Create Instance** under **Service**. Copy and replace the following YAML:
 
-	> ```
+	> ```yaml
 	> apiVersion: ibmcloud.ibm.com/v1alpha1
 	> kind: Service
 	> metadata:
@@ -134,7 +135,7 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 5. Next, create the "binding" resource for your Operator \(instead of Service as you did above\):
 
-	> ```shell
+	> ```bash
 	> apiVersion: ibmcloud.ibm.com/v1alpha1
 	> kind: Binding
 	> metadata:
@@ -155,13 +156,13 @@ Now you'll create the Node.js app that will populate your Cloudant DB with patie
 
 1. Make sure you're in the project **example-health**:
 
-    ```sh
+    ```bash
     oc project example-health
     ```
 
 2. Run the following command to create this application:
 
-    ```sh
+    ```bash
     oc new-app --name=patient-db centos/nodejs-10-centos7~https://github.com/svennam92/nodejs-patientdb-cloudant
     ```
 
@@ -210,4 +211,3 @@ Your application is now backed by the mock patient data in the Cloudant DB! You 
 3. Click through the different patients you can log-in as.
 
    ![credentials](../assets/credentials.png)
-

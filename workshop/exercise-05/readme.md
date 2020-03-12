@@ -11,13 +11,13 @@ Use views and dashboards to monitor your infrastructure, applications, and servi
 
 The following table lists the different types of pre-defined dashboards:
 
-| Type | Description | 
+| Type | Description |
 | :--- | :--- |
 | Applications | Dashboards that you can use to monitor your applications and infrastructure components. |
 | Host and containers | Dashboards that you can use to monitor resource utilization and system activity on your hosts and in your containers. |
-| Network | Dashboards that you can use to monitor your network connections and activity. | 
-| Service | Dashboards that you can use to monitor the performance of your services, even if those services are deployed in orchestrated containers. | 
-| Topology | Dashboards that you can use to monitor the logical dependencies of your application tiers and overlay metrics. | 
+| Network | Dashboards that you can use to monitor your network connections and activity. |
+| Service | Dashboards that you can use to monitor the performance of your services, even if those services are deployed in orchestrated containers. |
+| Topology | Dashboards that you can use to monitor the logical dependencies of your application tiers and overlay metrics. |
 
 
 ## Complete the Sysdig installation wizard
@@ -32,7 +32,7 @@ The following table lists the different types of pre-defined dashboards:
 3. Select **Kubernetes | GKE | OpenShift** as the installation method.
    ![](../assets/sysdig-wizard2.png)
 
-4. You should see a message `You have X agents connected`. Click **GO TO NEXT STEP**. 
+4. You should see a message `You have X agents connected`. Click **GO TO NEXT STEP**.
    ![](../assets/sysdig-wizard3.png)
 
 5. Setup is complete. Click **LET'S GET STARTED**
@@ -84,7 +84,7 @@ You can use the **Connection Table** dashboard to monitor how data flows between
 2. Select your cluster (e.g. roks081). Then, select the namespace where you deployed your sample app.
 3. Select the _patientui_ pod entry.
 4. Select **Default Dashboards**.
-5. Select **Kubernetes > Kuberentes Cluster and Node Capacity**. 
+5. Select **Kubernetes > Kuberentes Cluster and Node Capacity**.
 
    ![](../assets/explore-img-9.png)
 
@@ -114,10 +114,10 @@ You can use the **Connection Table** dashboard to monitor how data flows between
 
     ![](../assets/dashboard-img-5.png)
 
-## Congratulations!
-
-That's it, you're done with the Red Hat OpenShift 4.3 on IBM Cloud workshop. Thanks for joining us!
 
 {% hint style='tip' %}
 Find more about IBM Cloud Monitoring with Sysdig in the [IBM Cloud documentation](https://cloud.ibm.com/docs/services/Monitoring-with-Sysdig/index.html#getting-started).
 {% endhint %}
+
+
+Thanks so much for running this full workshop, we hope you've learned something. If you can reach out to the TA or Workshop Presenter and say you've completed with any feedback you may have.
