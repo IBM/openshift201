@@ -6,7 +6,7 @@ To configure your Kubernetes cluster to send logs to your IBM Log Analysis with 
 
 {% hint style='info' %} If you've been invited to a lab account where an instance of LogDNA has already been provisioned and configured, skip the create and deploy steps and go to verify the agent at the bottom. Retrieve your LogDNA instance be looking at the cluster name in the tags attached to the instance. {% endhint %}
 
-## Create a Sysdig service instance
+## Create a LogDNA service instance
 
 1. Create an instance of [IBM Cloud Logging with LogDNA](https://cloud.ibm.com/observe/logging/create) from the catalog:
    1. Set the **Service name** to **YOUR_IBM_ID-logdna**.
