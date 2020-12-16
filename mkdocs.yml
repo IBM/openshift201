@@ -1,0 +1,100 @@
+# Project information
+site_name: OpenShift 201
+site_url: https://ibm.github.io/openshift201
+site_author: IBM Developer
+
+# Repository
+repo_name: openshift201
+repo_url: https://github.com/ibm/openshift201
+edit_uri: edit/master/docs
+
+# Navigation
+nav:
+  - Welcome:
+    - About the workshop: README.md
+    - Create Account and Get Cluster: pre-work/get_started.md
+    - Configure Shell Access: pre-work/setup_cli.md
+  - Workshop:
+    - Cloudant DB with IBM Cloud Operator: exercise-01/readme.md
+    - Configure the Sysdig Agent: exercise-02/readme.md
+    - Monitor your Cluster with SysDig: exercise-03/readme.md
+    - Configure the LogDNA Agent: exercise-04/readme.md
+    - Analyze your logs with LogDNA: exercise-05/readme.md
+  - References:
+    - Additional resources: resources/README.md
+
+## DO NOT CHANGE BELOW THIS LINE
+
+# Copyright
+copyright: Copyright &copy; 2020 IBM Developer
+
+# Theme
+theme:
+  name: material
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/library
+  features:
+    - navigation.tabs
+    #- navigation.instant
+  palette:
+    scheme: default
+    primary: blue
+    accent: blue
+
+# Plugins
+plugins:
+  - search
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ibm
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ibmdeveloper
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/ibm/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/user/developerworks
+    - icon: fontawesome/brands/dev
+      link: https://dev.to/ibmdeveloper
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

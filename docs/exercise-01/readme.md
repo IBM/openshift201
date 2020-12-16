@@ -66,7 +66,7 @@ Let's understand exactly how Operators work. In the first exercise, you deployed
 
 8. Make sure you're logged in to the cluster in this terminal session. Otherwise you must re-run the command `oc login` with the cluster information:
 
-    [Access your cluster using the oc CLI](../prep-work/setup_cli.md#access-the-openShift-web-console).
+    [Access your cluster using the oc CLI](../pre-work/setup_cli.md#access-the-openShift-web-console).
 
 9. Use the helper script provided by IBM to create a new API token, and register it as a secret in your OpenShift cluster:
 
